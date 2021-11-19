@@ -14,7 +14,7 @@ const CampaignIndex = ({ campaigns }) => {
         <Link route={`/campaigns/${addr}`}>
           <a>View Campaign</a>
         </Link>
-        <Donate></Donate>
+        <Donate addr={addr}></Donate>
       </>
     ),
     fluid: true,

@@ -1,7 +1,7 @@
-import React from "react";
-import { Container } from "semantic-ui-react";
-import Header from "./Header";
-import Head from "next/head";
+import React from "react"
+import { Container } from "semantic-ui-react"
+import Header from "./Header"
+import Head from "next/head"
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <Header />
       {children}
     </Container>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

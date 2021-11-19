@@ -1,12 +1,12 @@
-import React from "react";
-import { Button, Card, Grid } from "semantic-ui-react";
-import ContributeForm from "../../components/ContributeForm";
-import Layout from "../../components/Layout";
-import Campaign from "../../ethereum/campaign";
-import web3 from "../../ethereum/web3";
-import { Link } from "../../routes";
+import React from "react"
+import { Button, Card, Grid } from "semantic-ui-react"
+import ContributeForm from "../../components/ContributeForm"
+import Layout from "../../components/Layout"
+import Campaign from "../../ethereum/campaign"
+import web3 from "../../ethereum/web3"
+import { Link } from "../../routes"
 
-const CampaignShow = (props) => {
+const CampaignShow = props => {
   const {
     address,
     balance,
@@ -14,7 +14,7 @@ const CampaignShow = (props) => {
     minimumContribution,
     requestCount,
     approversCount,
-  } = props;
+  } = props
   const items = [
     {
       header: manager,
@@ -45,7 +45,7 @@ const CampaignShow = (props) => {
       meta: "Campaign Balance (ether)",
       description: "The balance is how much money this has left to spend.",
     },
-  ];
+  ]
 
   return (
     <Layout>
@@ -72,12 +72,12 @@ const CampaignShow = (props) => {
         </Grid.Row>
       </Grid>
     </Layout>
-  );
-};
+  )
+}
 
-CampaignShow.getInitialProps = async (props) => {
-  const campaign = Campaign(props.query.address);
-  const summary = await campaign.methods.getSummary().call();
+CampaignShow.getInitialProps = async props => {
+  const campaign = Campaign(props.query.address)
+  const summary = await campaign.methods.getSummary().call()
   return {
     address: props.query.address,
     minimumContribution: summary[0],
@@ -85,7 +85,7 @@ CampaignShow.getInitialProps = async (props) => {
     requestCount: summary[2],
     approversCount: summary[3],
     manager: summary[4],
-  };
-};
+  }
+}
 
-export default CampaignShow;
+export default CampaignShow
