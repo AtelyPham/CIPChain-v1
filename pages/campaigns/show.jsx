@@ -15,7 +15,6 @@ const CampaignShow = (props) => {
     requestCount,
     approversCount,
   } = props;
-
   const items = [
     {
       header: manager,
@@ -78,9 +77,7 @@ const CampaignShow = (props) => {
 
 CampaignShow.getInitialProps = async (props) => {
   const campaign = Campaign(props.query.address);
-
   const summary = await campaign.methods.getSummary().call();
-
   return {
     address: props.query.address,
     minimumContribution: summary[0],
