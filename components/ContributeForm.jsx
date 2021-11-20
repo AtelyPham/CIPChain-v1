@@ -36,7 +36,7 @@ const ContributeForm = ({ address }) => {
     <Form onSubmit={onSubmit} error={!!errorMsg}>
       <Form.Field>
         <label htmlFor="amount-to-contribute">
-          Amount to Contribute to {address}
+          Amount to Contribute to {address} !!!
         </label>
         <Input
           value={value}
