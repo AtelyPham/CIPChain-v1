@@ -1,7 +1,8 @@
 import React from "react"
 import { Button, Modal } from "semantic-ui-react"
+import ContributeForm from "../components/ContributeForm"
 
-function ModalExampleShorthand() {
+function ModalExampleShorthand(props) {
   return (
     <Modal
       trigger={
@@ -12,7 +13,9 @@ function ModalExampleShorthand() {
       header="Reminder!"
       content="Call Benjamin regarding the reports."
       actions={["Snooze", { key: "done", content: "Done", positive: true }]}
-    />
+    >
+      <ContributeForm address={props.addr}></ContributeForm>
+    </Modal>
   )
 }
 
